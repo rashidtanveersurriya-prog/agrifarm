@@ -40,7 +40,7 @@ export class PDFGenerator {
 
     // Shop details
     this.doc.setFontSize(9);
-    this.doc.setFont(undefined, 'normal');
+    this.doc.setFont('', 'normal');
     this.doc.text(`Address: ${this.config.shopAddress}`, margin, this.currentY);
     this.currentY += lineHeight;
 
@@ -70,7 +70,7 @@ export class PDFGenerator {
 
   private addFooter() {
     this.doc.setFontSize(8);
-    this.doc.setFont(undefined, 'normal');
+    this.doc.setFont('', 'normal');
 
     const pageCount = this.doc.internal.pages.length - 1;
     for (let i = 1; i <= pageCount; i++) {
@@ -254,14 +254,14 @@ export class PDFGenerator {
     this.doc.text(`INVOICE`, 10, 20);
 
     this.doc.setFontSize(10);
-    this.doc.setFont(undefined, 'normal');
+    this.doc.setFont('', 'normal');
     this.doc.text(`Invoice #: ${sale.invoice_number}`, 10, 30);
     this.doc.text(`Date: ${new Date(sale.sale_date).toLocaleDateString()}`, 10, 37);
 
     // Customer details
     this.doc.setFont('', 'bold');
     this.doc.text('Bill To:', 10, 50);
-    this.doc.setFont(undefined, 'normal');
+    this.doc.setFont('', 'normal');
     this.doc.text(sale.customer?.name || 'N/A', 10, 57);
     this.doc.text(sale.customer?.address || '', 10, 64);
 
