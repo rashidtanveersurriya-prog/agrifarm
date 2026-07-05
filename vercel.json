@@ -1,6 +1,6 @@
 {
-  "buildCommand": "NEXT_SKIP_ENV_VALIDATION=1 next build",
+  "buildCommand": "TURBOPACK=false next build",
   "env": {
-    "NEXT_SKIP_ENV_VALIDATION": "1"
+    "TURBOPACK": "false"
   }
 }
