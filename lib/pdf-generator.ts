@@ -33,7 +33,7 @@ export class PDFGenerator {
 
     // Shop name
     this.doc.setFontSize(16);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(this.config.shopName, margin, this.currentY);
 
     this.currentY += lineHeight;
@@ -58,7 +58,7 @@ export class PDFGenerator {
     // Custom header if provided
     if (this.config.customHeader) {
       this.doc.setFontSize(12);
-      this.doc.setFont(undefined, 'bold');
+      this.doc.setFont('', 'bold');
       this.doc.text(this.config.customHeader, margin, this.currentY);
       this.currentY += lineHeight;
     }
@@ -106,7 +106,7 @@ export class PDFGenerator {
     this.addHeader();
 
     this.doc.setFontSize(11);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text('SALES REPORT', 10, this.currentY);
     this.currentY += 10;
 
@@ -141,7 +141,7 @@ export class PDFGenerator {
 
     // Total
     const totalAmount = sales.reduce((sum, s) => sum + parseFloat(s.net_amount.toString()), 0);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(`Total Sales: ${totalAmount.toFixed(2)}`, 10, this.currentY);
 
     this.addFooter();
@@ -152,7 +152,7 @@ export class PDFGenerator {
     this.addHeader();
 
     this.doc.setFontSize(11);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text('PURCHASE REPORT', 10, this.currentY);
     this.currentY += 10;
 
@@ -186,7 +186,7 @@ export class PDFGenerator {
     this.currentY = (this.doc as any).lastAutoTable.finalY + 10;
 
     const totalAmount = purchases.reduce((sum, p) => sum + parseFloat(p.net_amount.toString()), 0);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(`Total Purchases: ${totalAmount.toFixed(2)}`, 10, this.currentY);
 
     this.addFooter();
@@ -197,7 +197,7 @@ export class PDFGenerator {
     this.addHeader();
 
     this.doc.setFontSize(11);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text('EXPENSE REPORT', 10, this.currentY);
     this.currentY += 10;
 
@@ -241,7 +241,7 @@ export class PDFGenerator {
 
     this.currentY = (this.doc as any).lastAutoTable.finalY + 10;
 
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(`Total Expenses: ${grandTotal.toFixed(2)}`, 10, this.currentY);
 
     this.addFooter();
@@ -250,7 +250,7 @@ export class PDFGenerator {
 
   generateInvoicePDF(sale: Sale) {
     this.doc.setFontSize(16);
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(`INVOICE`, 10, 20);
 
     this.doc.setFontSize(10);
@@ -259,7 +259,7 @@ export class PDFGenerator {
     this.doc.text(`Date: ${new Date(sale.sale_date).toLocaleDateString()}`, 10, 37);
 
     // Customer details
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text('Bill To:', 10, 50);
     this.doc.setFont(undefined, 'normal');
     this.doc.text(sale.customer?.name || 'N/A', 10, 57);
@@ -287,7 +287,7 @@ export class PDFGenerator {
     this.doc.text(`Tax: ${sale.tax_amount.toFixed(2)}`, 150, finalY + 7);
     this.doc.text(`Discount: ${sale.discount.toFixed(2)}`, 150, finalY + 14);
 
-    this.doc.setFont(undefined, 'bold');
+    this.doc.setFont('', 'bold');
     this.doc.text(`Total: ${sale.net_amount.toFixed(2)}`, 150, finalY + 21);
 
     this.addFooter();
