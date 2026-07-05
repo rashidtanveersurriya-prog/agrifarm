@@ -1,4 +1,5 @@
 'use client';
+import DashboardLayout from '@/app/components/DashboardLayout';
 
 import { useState } from 'react';
 import { useAuth } from '@/lib/auth-context';

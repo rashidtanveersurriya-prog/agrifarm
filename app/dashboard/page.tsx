@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import DashboardLayout from '@/app/components/DashboardLayout';
 
 interface DashboardStats {
   totalSales: number;
@@ -91,9 +92,10 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Navigation */}
-      <nav className="bg-white shadow-md">
+    <DashboardLayout>
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        {/* Top Navigation */}
+        <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold text-blue-600">Agrifarm ERP</h1>
@@ -215,6 +217,7 @@ export default function DashboardPage() {
           <p className="mt-1 text-gray-500">Agrifarm ERP - Powered by <span className="font-semibold text-gray-700">Softtech</span></p>
         </div>
       </footer>
-    </div>
+      </div>
+    </DashboardLayout>
   );
 }

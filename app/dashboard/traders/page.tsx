@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/lib/auth-context';
 import { Trader } from '@/types';
+import DashboardLayout from '@/app/components/DashboardLayout';
 
 export default function TradersPage() {
   const router = useRouter();
@@ -52,6 +53,7 @@ export default function TradersPage() {
   };
 
   return (
+    <DashboardLayout>
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
@@ -139,5 +141,6 @@ export default function TradersPage() {
         </div>
       </footer>
     </div>
+    </DashboardLayout>
   );
 }
