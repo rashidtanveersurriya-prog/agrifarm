@@ -1,0 +1,6 @@
+{
+  "buildCommand": "NEXT_SKIP_ENV_VALIDATION=1 next build",
+  "env": {
+    "NEXT_SKIP_ENV_VALIDATION": "1"
+  }
+}
