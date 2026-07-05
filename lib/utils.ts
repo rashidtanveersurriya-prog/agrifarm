@@ -111,7 +111,7 @@ export function validateEmail(email: string): boolean {
 
 export function validatePhone(phone: string): boolean {
   const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-  return phoneRegex.length >= 7 && phoneRegex.test(phone);
+  return phone.length >= 7 && phoneRegex.test(phone);
 }
 
 export function truncateText(text: string, maxLength: number): string {
