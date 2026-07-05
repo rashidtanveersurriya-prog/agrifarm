@@ -17,7 +17,7 @@ export interface User {
   updated_at: string;
 }
 
-// Customer types
+// Customer/Buyer types
 export interface Customer {
   id: string;
   user_id: string;

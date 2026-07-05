@@ -68,7 +68,7 @@ export async function DELETE(
 
     return NextResponse.json({
       success: true,
-      message: 'Customer deleted successfully',
+      message: 'Trader/Buyer deleted successfully',
     });
   } catch (error: any) {
     return NextResponse.json(

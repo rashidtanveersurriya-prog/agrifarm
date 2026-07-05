@@ -91,11 +91,14 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Navigation */}
       <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">Agrifarm ERP</h1>
+          <div>
+            <h1 className="text-2xl font-bold text-blue-600">Agrifarm ERP</h1>
+            <p className="text-xs text-gray-500">Powered by Softtech</p>
+          </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-600">{user?.email}</span>
             <button
@@ -109,7 +112,7 @@ export default function DashboardPage() {
       </nav>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 flex-1">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Dashboard</h2>
 
         {/* Stats Grid */}
@@ -135,9 +138,9 @@ export default function DashboardPage() {
             </div>
           </Link>
 
-          <Link href="/dashboard/customers">
+          <Link href="/dashboard/traders">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition cursor-pointer">
-              <h3 className="text-gray-600 font-semibold mb-2">Customers</h3>
+              <h3 className="text-gray-600 font-semibold mb-2">Traders/Buyers</h3>
               <p className="text-3xl font-bold text-green-600">{stats.totalCustomers}</p>
             </div>
           </Link>
@@ -161,9 +164,9 @@ export default function DashboardPage() {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Access</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link href="/dashboard/customers/new">
+            <Link href="/dashboard/traders/new">
               <button className="w-full bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 font-semibold">
-                New Customer
+                New Trader/Buyer
               </button>
             </Link>
             <Link href="/dashboard/traders/new">
@@ -204,6 +207,14 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
+          <p>© 2026 Softtech. All rights reserved.</p>
+          <p className="mt-1 text-gray-500">Agrifarm ERP - Powered by <span className="font-semibold text-gray-700">Softtech</span></p>
+        </div>
+      </footer>
     </div>
   );
 }
