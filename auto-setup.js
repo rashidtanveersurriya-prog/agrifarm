@@ -2,9 +2,9 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
 
-// Configuration
-const SUPABASE_URL = 'https://lagblxievlfcgcappknn.supabase.co';
-const SERVICE_ROLE_KEY = 'sb_secret_pwfIRdbV1SXxLzcpS28hXA_9rzLMeBc';
+// Configuration - Use environment variables
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://your-supabase-url.supabase.co';
+const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'your-service-role-key';
 
 console.log('🔧 Agrifarm ERP - Automatic Database Setup\n');
 console.log('═══════════════════════════════════════════\n');

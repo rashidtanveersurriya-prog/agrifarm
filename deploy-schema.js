@@ -5,9 +5,9 @@ const fetch = require('node-fetch');
 console.log('🔧 Agrifarm ERP - Supabase Schema Deployment\n');
 console.log('═══════════════════════════════════════════\n');
 
-const SUPABASE_URL = 'https://lagblxievlfcgcappknn.supabase.co';
-const SERVICE_ROLE_KEY = 'sb_secret_pwfIRdbV1SXxLzcpS28hXA_9rzLMeBc';
-const PROJECT_ID = 'lagblxievlfcgcappknn';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://your-supabase-url.supabase.co';
+const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'your-service-role-key';
+const PROJECT_ID = process.env.SUPABASE_PROJECT_ID || 'your-project-id';
 
 async function deploySchema() {
   try {
