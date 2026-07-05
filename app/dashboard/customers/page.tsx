@@ -52,7 +52,7 @@ export default function CustomersPage() {
     }
   };
 
-  const handleDelete = async (id: string) {
+  const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this customer?')) return;
 
     try {
