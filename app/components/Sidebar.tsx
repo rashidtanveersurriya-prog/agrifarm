@@ -96,8 +96,8 @@ export default function Sidebar() {
       {user && (
         <div className="p-4 bg-blue-800 mx-3 mt-4 rounded-lg">
           <p className="text-xs text-blue-200">Logged in as</p>
-          <p className="font-semibold text-sm truncate">{user.full_name || user.email}</p>
-          <p className="text-xs text-blue-300">{user.role?.toUpperCase()}</p>
+          <p className="font-semibold text-sm truncate">{user.email}</p>
+          <p className="text-xs text-blue-300">User</p>
         </div>
       )}
 
