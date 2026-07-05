@@ -126,8 +126,8 @@ export default function NewSalePage() {
     );
 
     return {
-      total_amount: totals.total + totals.discount,
-      discount,
+      total_amount: totals.total + totals.tax,
+      discount: totals.discount,
       tax_amount: totals.tax,
       net_amount: totals.total,
     };
