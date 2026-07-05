@@ -7,11 +7,11 @@ import { useAuth } from '@/lib/auth-context';
 
 export default function Sidebar() {
   const router = useRouter();
-  const { user, logout } = useAuth();
+  const { user, signOut } = useAuth();
   const [expandedMenu, setExpandedMenu] = useState<string | null>('dashboard');
 
   const handleLogout = async () => {
-    await logout();
+    await signOut();
     router.push('/auth/login');
   };
 
