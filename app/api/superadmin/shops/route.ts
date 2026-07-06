@@ -4,7 +4,7 @@ import { supabase } from '@/lib/supabase';
 function verifyToken(token: string): boolean {
   try {
     // Basic token verification
-    return token && token.length > 0;
+    return !!(token && token.length > 0);
   } catch {
     return false;
   }
